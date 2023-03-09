@@ -21,12 +21,22 @@ class _MyAppState extends State<MyApp> {
           elevation: 0,
           title: const Center(child: Text("Imagens")),
         ),
-        body: Image.asset(
-          'assets/images/markus-spiske-zKvJXXbpsxI-unsplash.jpg',
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.cover,
-        ),
+        body: Stack(children: [
+          Image.asset(
+            'assets/images/markus-spiske-zKvJXXbpsxI-unsplash.jpg',
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
+          ),
+          Center(
+            child: Image.network(
+              'https://images.unsplash.com/photo-1678284130014-dce38115356a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+              width: 150,
+              height: 150,
+              fit: BoxFit.cover,
+            ),
+          )
+        ]),
       ),
     );
   }
